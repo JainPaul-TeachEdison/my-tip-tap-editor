@@ -248,7 +248,7 @@ const TiptapEditor = () => {
             editor.isActive("highlight", { color: "red" }) ? "is-active" : ""
           }`}
         >
-          Red ('red')
+          Red
         </button>
         <button
           onClick={() =>
