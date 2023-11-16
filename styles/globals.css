@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.tiptap > * + * {
+    margin-top: 0.75em;
+  }
+  
+  .tiptap ul{
+    padding: 0 1rem;
+    list-style-type: disc;
+  }
+  .tiptap ol {
+    padding: 0 1rem;
+    list-style-type: decimal;
+  }
+  
