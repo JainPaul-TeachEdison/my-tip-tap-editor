@@ -9,6 +9,9 @@ import BulletList from "@tiptap/extension-bullet-list";
 import TextStyle from "@tiptap/extension-text-style";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
+import Bold from "@tiptap/extension-bold";
+import Italic from "@tiptap/extension-italic";
+import Underline from '@tiptap/extension-underline'
 
 const TiptapEditor = () => {
   const editor = useEditor({
@@ -22,6 +25,9 @@ const TiptapEditor = () => {
       TextStyle,
       Color,
       Highlight.configure({ multicolor: true }),
+      Bold,
+      Italic,
+      Underline,
     ],
     content: `
    
@@ -271,6 +277,45 @@ const TiptapEditor = () => {
         >
           Unset Highlight
         </button>
+      </div>
+      <h1 className="text-xl font-bold mb-4">Text Formating</h1>
+      <div className="flex space-x-2 mb-4">
+        <button
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          className={`px-4 py-2 text-${
+            editor.isActive("bold") ? "white" : "black"
+          } ${
+            editor.isActive("bold")
+              ? "bg-black"
+              : "bg-white border-black border-2"
+          } rounded`}
+        >
+          Bold
+        </button>
+        <button
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+          className={`px-4 py-2 text-${
+            editor.isActive("italic") ? "white" : "black"
+          } ${
+            editor.isActive("italic")
+              ? "bg-black"
+              : "bg-white border-black border-2"
+          } rounded`}
+        >
+          Italic
+        </button>
+        <button
+        onClick={() => editor.chain().focus().toggleUnderline().run()}
+        className={`px-4 py-2 text-${
+          editor.isActive("underline") ? "white" : "black"
+        } ${
+          editor.isActive("underline")
+            ? "bg-black"
+            : "bg-white border-black border-2"
+        } rounded`}
+      >
+        Underline
+      </button>
       </div>
 
       <EditorContent editor={editor} className="border p-4" />
