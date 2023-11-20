@@ -2,16 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.tiptap > * + * {
-    margin-top: 0.75em;
-  }
-  
-  .tiptap ul{
-    padding: 0 1rem;
-    list-style-type: disc;
-  }
-  .tiptap ol {
-    padding: 0 1rem;
-    list-style-type: decimal;
-  }
-  
+.tiptap>*+* {
+  margin-top: 0.75em;
+}
+
+.tiptap ul {
+  padding: 0 1rem;
+  list-style-type: disc;
+}
+
+.tiptap ol {
+  padding: 0 1rem;
+  list-style-type: decimal;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid rgba(13, 13, 13, 1);
+  padding-left: .3rem;
+  margin-left: 1rem;
+}
+
+
+.tiptap code {
+  background-color: rgba(97, 97, 97, 0.1);
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  color: #616161;
+  font-size: 0.9rem;
+  padding: 0.25em;
+}

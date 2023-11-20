@@ -302,6 +302,11 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-2.1.12.tgz"
   integrity sha512-HlhrzIjYUT8oCH9nYzEL2QTTn8d1ECnVhKvzAe6x41xk31PjLMHTUy8aYjeQEkWZOWZ34tiTmslV1ce6R3Dt8g==
 
+"@tiptap/extension-text-align@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-text-align/-/extension-text-align-2.1.12.tgz"
+  integrity sha512-siMlwrkgVrAxxgmZn8GOc75J7UZi2CVrP9vDHkUPPyKm/fjssYekXwGCEk4Vswii1BbOh2gt+MDsRkeYRGyDlQ==
+
 "@tiptap/extension-text-style@^2.0.0", "@tiptap/extension-text-style@^2.1.12":
   version "2.1.12"
   resolved "https://registry.npmjs.org/@tiptap/extension-text-style/-/extension-text-style-2.1.12.tgz"

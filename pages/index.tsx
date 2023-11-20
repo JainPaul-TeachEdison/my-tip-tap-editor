@@ -11,14 +11,23 @@ import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
 import Bold from "@tiptap/extension-bold";
 import Italic from "@tiptap/extension-italic";
-import Underline from '@tiptap/extension-underline'
+import Underline from "@tiptap/extension-underline";
+import TextAlign from "@tiptap/extension-text-align";
+import Heading from "@tiptap/extension-heading";
+import Strike from "@tiptap/extension-strike";
+import Code from '@tiptap/extension-code'
+import Blockquote from '@tiptap/extension-blockquote'
 
 const TiptapEditor = () => {
   const editor = useEditor({
     extensions: [
       Document,
       Paragraph,
+      Heading,
       Text,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
       OrderedList,
       ListItem,
       BulletList,
@@ -28,6 +37,9 @@ const TiptapEditor = () => {
       Bold,
       Italic,
       Underline,
+      Strike,
+      Code,
+      Blockquote,
     ],
     content: `
    
@@ -40,6 +52,9 @@ const TiptapEditor = () => {
         <li>This item starts at 5</li>
         <li>And another one</li>
       </ol>
+
+      <h2>Heading</h2>
+      <p>first paragraph</p>
     `,
   });
 
@@ -53,6 +68,8 @@ const TiptapEditor = () => {
   return (
     <div className="max-w-2xl mx-auto mt-8">
       <h1 className="text-5xl font-bold mb-4 text-center">Tiptap Editor</h1>
+
+      {/* Listing  */}
       <h1 className="text-xl font-bold mb-4">Ordered/Unorderd List</h1>
       <div className="flex space-x-2 mb-4">
         <button
@@ -99,7 +116,7 @@ const TiptapEditor = () => {
           Toggle Ordered List
         </button>
       </div>
-
+      {/* Text color */}
       <h1 className="text-xl font-bold mb-4">Text color</h1>
 
       <div className="flex space-x-2 mb-4">
@@ -188,6 +205,7 @@ const TiptapEditor = () => {
           UnsetColor
         </button>
       </div>
+      {/* Text highlight */}
       <h1 className="text-xl font-bold mb-4">Highlight Text</h1>
       <div className="flex space-x-2 mb-4">
         <button
@@ -257,18 +275,6 @@ const TiptapEditor = () => {
           Red
         </button>
         <button
-          onClick={() =>
-            editor.chain().focus().toggleHighlight({ color: "#ffa8a8" }).run()
-          }
-          className={`px-4 py-2 bg-red-500 text-white ${
-            editor.isActive("highlight", { color: "#ffa8a8" })
-              ? "is-active"
-              : ""
-          }`}
-        >
-          Red (#ffa8a8)
-        </button>
-        <button
           onClick={() => editor.chain().focus().unsetHighlight().run()}
           className={`px-4 py-2 bg-gray-500 text-white ${
             !editor.isActive("highlight") ? "cursor-not-allowed" : ""
@@ -278,6 +284,7 @@ const TiptapEditor = () => {
           Unset Highlight
         </button>
       </div>
+      {/* Text Fromating */}
       <h1 className="text-xl font-bold mb-4">Text Formating</h1>
       <div className="flex space-x-2 mb-4">
         <button
@@ -305,17 +312,89 @@ const TiptapEditor = () => {
           Italic
         </button>
         <button
-        onClick={() => editor.chain().focus().toggleUnderline().run()}
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          className={`px-4 py-2 text-${
+            editor.isActive("underline") ? "white" : "black"
+          } ${
+            editor.isActive("underline")
+              ? "bg-black"
+              : "bg-white border-black border-2"
+          } rounded`}
+        >
+          Underline
+        </button>
+        <button
+        onClick={() => editor.chain().focus().toggleStrike().run()}
         className={`px-4 py-2 text-${
-          editor.isActive("underline") ? "white" : "black"
+          editor.isActive("strike") ? "white" : "black"
         } ${
-          editor.isActive("underline")
+          editor.isActive("strike")
             ? "bg-black"
             : "bg-white border-black border-2"
         } rounded`}
       >
-        Underline
+        Strike
       </button>
+      <button
+        onClick={() => editor.chain().focus().toggleCode().run()}
+        className={`px-4 py-2 text-${
+          editor.isActive("code") ? "white" : "black"
+        } ${
+          editor.isActive("code")
+            ? "bg-black"
+            : "bg-white border-black border-2"
+        } rounded`}
+      >
+        Code
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        className={`px-4 py-2 text-${
+          editor.isActive("blockquote") ? "white" : "black"
+        } ${
+          editor.isActive("blockquote")
+            ? "bg-black"
+            : "bg-white border-black border-2"
+        } rounded`}
+      >
+        Blockquote
+      </button>
+      </div>
+      {/* Text alignment */}
+      <h1 className="text-xl font-bold mb-4">Text Alignment</h1>
+      <div className="flex items-center space-x-4">
+        <button
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          className={`${
+            editor.isActive({ textAlign: "left" }) ? "is-active" : ""
+          } bg-black text-white px-3 py-1 rounded`}
+        >
+          left
+        </button>
+        <button
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          className={`${
+            editor.isActive({ textAlign: "center" }) ? "is-active" : ""
+          } bg-black text-white px-3 py-1 rounded`}
+        >
+          center
+        </button>
+        <button
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          className={`${
+            editor.isActive({ textAlign: "right" }) ? "is-active" : ""
+          } bg-black text-white px-3 py-1 rounded`}
+        >
+          right
+        </button>
+        <button
+          onClick={() => editor.chain().focus().setTextAlign("justify").run()}
+          className={`${
+            editor.isActive({ textAlign: "justify" }) ? "is-active" : ""
+          } bg-black text-white px-3 py-1 rounded`}
+        >
+          justify
+        </button>
       </div>
 
       <EditorContent editor={editor} className="border p-4" />
