@@ -282,6 +282,13 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-italic/-/extension-italic-2.1.12.tgz"
   integrity sha512-/XYrW4ZEWyqDvnXVKbgTXItpJOp2ycswk+fJ3vuexyolO6NSs0UuYC6X4f+FbHYL5VuWqVBv7EavGa+tB6sl3A==
 
+"@tiptap/extension-link@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-link/-/extension-link-2.1.12.tgz"
+  integrity sha512-Sti5hhlkCqi5vzdQjU/gbmr8kb578p+u0J4kWS+SSz3BknNThEm/7Id67qdjBTOQbwuN07lHjDaabJL0hSkzGQ==
+  dependencies:
+    linkifyjs "^4.1.0"
+
 "@tiptap/extension-list-item@^2.1.12":
   version "2.1.12"
   resolved "https://registry.npmjs.org/@tiptap/extension-list-item/-/extension-list-item-2.1.12.tgz"
@@ -301,6 +308,36 @@
   version "2.1.12"
   resolved "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-2.1.12.tgz"
   integrity sha512-HlhrzIjYUT8oCH9nYzEL2QTTn8d1ECnVhKvzAe6x41xk31PjLMHTUy8aYjeQEkWZOWZ34tiTmslV1ce6R3Dt8g==
+
+"@tiptap/extension-subscript@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-subscript/-/extension-subscript-2.1.12.tgz"
+  integrity sha512-tb1jysEvf4SIiXwEOgDTXiyrG39RVNHvn/zsGMg5wy5t9qUp9m1k7kKYTH084ktuKDAPQonCcpn3hwc+ngTFzg==
+
+"@tiptap/extension-superscript@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-superscript/-/extension-superscript-2.1.12.tgz"
+  integrity sha512-ek6L+DNsrjiJieArlgTvQt1VfJ56d8V19WAPW/ciRhq88YRlTEY9nSO3QuUCSUO1nGmE5OWQpgrsiW/XZbONVw==
+
+"@tiptap/extension-table-cell@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-table-cell/-/extension-table-cell-2.1.12.tgz"
+  integrity sha512-hextcfVTdwX8G7s8Q/V6LW2aUhGvPgu1dfV+kVVO42AFHxG+6PIkDOUuHphGajG3Nrs129bjMDWb8jphj38dUg==
+
+"@tiptap/extension-table-header@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-table-header/-/extension-table-header-2.1.12.tgz"
+  integrity sha512-a4WZ5Z7gqQ/QlK8cK2d1ONYdma/J5+yH/0SNtQhkfELoS45GsLJh89OyKO0W0FnY6Mg0RoH1FsoBD+cqm0yazA==
+
+"@tiptap/extension-table-row@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-table-row/-/extension-table-row-2.1.12.tgz"
+  integrity sha512-0kPr+zngQC1YQRcU6+Fl3CpIW/SdJhVJ5qOLpQleXrLPdjmZQd3Z1DXvOSDphYjXCowGPCxeUa++6bo7IoEMJw==
+
+"@tiptap/extension-table@^2.1.12":
+  version "2.1.12"
+  resolved "https://registry.npmjs.org/@tiptap/extension-table/-/extension-table-2.1.12.tgz"
+  integrity sha512-q/DuKZ4j1ycRfuFdb9rBJ3MglGNxlM2BQ1csScX/BrVIsAQI5B8sdzy1BrIlepQ6DRu4DCzHcKMI8u4/edUSWA==
 
 "@tiptap/extension-text-align@^2.1.12":
   version "2.1.12"
@@ -1817,6 +1854,11 @@ linkify-it@^4.0.1:
   integrity sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==
   dependencies:
     uc.micro "^1.0.1"
+
+linkifyjs@^4.1.0:
+  version "4.1.2"
+  resolved "https://registry.npmjs.org/linkifyjs/-/linkifyjs-4.1.2.tgz"
+  integrity sha512-1elJrH8MwUgr77Rgmx4JgB/nBgISYVoGossH6pAfCeHG+07TblTn6RWKx0MKozEMJU6NCFYHRih9M8ZtV3YZ+Q==
 
 locate-path@^6.0.0:
   version "6.0.0"
